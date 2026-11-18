@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>公開の実験</title>
+<style>
+  body { font-family: sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; line-height: 1.8; }
+  h1 { font-size: 28px; }
+  .box { border: 3px solid #1565c0; border-radius: 8px; padding: 12px 16px; background: #e3f2fd; }
+  .ng { color: #c62828; font-weight: bold; }
+  .ok { color: #2e7d32; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>公開の実験</h1>
+<p>このページが見えていれば、1 つの HTML ファイルを置くだけで見せられます。</p>
+
+<div class="box">
+  <p>1. 日本語の字: この文が読めれば <span class="ok">OK</span></p>
+  <p>2. CSS（色と枠）: この枠が青ければ <span class="ok">OK</span></p>
+  <p>3. SVG（図）: 下に赤い丸と緑の四角が出ていれば <span class="ok">OK</span></p>
+  <p>4. JavaScript: <span id="js" class="ng">動いていません</span></p>
+</div>
+
+<svg width="240" height="100" viewBox="0 0 240 100" role="img" aria-label="赤い丸と緑の四角">
+  <circle cx="60" cy="50" r="36" fill="#e53935"/>
+  <rect x="130" y="14" width="72" height="72" fill="#43a047"/>
+</svg>
+
+<p>版: 1</p>
+
+<script>
+  var el = document.getElementById('js');
+  el.textContent = 'OK（開いた時刻 ' + new Date().toLocaleString('ja-JP') + '）';
+  el.className = 'ok';
+</script>
+</body>
+</html>
